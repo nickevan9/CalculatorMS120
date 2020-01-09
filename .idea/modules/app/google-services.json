@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "754910022008",
+    "firebase_url": "https://tools-android-f8d42.firebaseio.com",
+    "project_id": "tools-android-f8d42",
+    "storage_bucket": "tools-android-f8d42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754910022008:android:9058d5b81deeac7411e08d",
+        "android_client_info": {
+          "package_name": "com.phone.extension.calculatorms120"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754910022008-5273rt0i705t3ar52agt4lfrkvomleq6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.phone.extension.calculatorms120",
+            "certificate_hash": "fd954c9be4de060483b0467d9501c0b0f48d936e"
+          }
+        },
+        {
+          "client_id": "754910022008-o0d7iufer0utfd5i4tfocrv7f9hqocqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMdgb5wZaohJdmM0TdpCmB6sm_Q5bbYJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754910022008-o0d7iufer0utfd5i4tfocrv7f9hqocqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

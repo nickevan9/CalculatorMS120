@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="stroke">#272624</color>
+
+    <!--    button-->
+    <color name="button_focus_number">#837D76</color>
+    <color name="button_unfocused_number">#555352</color>
+    <color name="button_focus_ac">#A86D31</color>
+    <color name="button_unfocused_ac">#B88047</color>
+    <color name="button_focus_action">#656361</color>
+    <color name="button_unfocused_action">#918D8A</color>
+    <color name="button_focus_more">#BA9D87</color>
+    <color name="button_unfocused_more">#37BAA6</color>
+</resources>
