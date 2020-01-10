@@ -6,6 +6,6 @@
     <dimen name="button_text_size_number">26sp</dimen>
     <dimen name="button_text_size_ac">22sp</dimen>
     <dimen name="button_text_action">18sp</dimen>
-    <dimen name="formula_text_size">20sp</dimen>
+    <dimen name="formula_text_size">24sp</dimen>
     <dimen name="display_text_size">40sp</dimen>
 </resources>

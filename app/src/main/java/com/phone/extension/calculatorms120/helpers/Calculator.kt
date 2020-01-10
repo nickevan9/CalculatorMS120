@@ -8,4 +8,12 @@ interface Calculator {
     fun setValueDouble(d: Double)
 
     fun setFormula(value: String, context: Context)
+
+    fun setVisibilityGT(visibility: Boolean)
+
+    fun setVisibilityMemory(visibility: Boolean)
+
+    fun setVisibilityTAX(visibility: Boolean)
+
+    fun setVisibilityMargin(visibility: Boolean)
 }

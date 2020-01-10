@@ -18,6 +18,8 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
     private var mBaseValue = 0.0
     private var mSecondValue = 0.0
 
+    private var memory = 0.0
+
     init {
         resetValues()
         setValue("0")
@@ -181,6 +183,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
 
         mSecondValue = getDisplayedNumberAsDouble()
         calculateResult()
+
         lastKey = EQUALS
     }
 
@@ -232,5 +235,19 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
             R.id.btn_8 -> addDigit(8)
             R.id.btn_9 -> addDigit(9)
         }
+    }
+
+    fun resetMemory() {
+        mCallback!!.setVisibilityMemory(true)
+        memory = 0.0
+    }
+
+    fun setMemory() {
+        mCallback!!.setVisibilityMemory(true)
+        memory = mBaseValue
+    }
+
+    fun setTax() {
+
     }
 }
