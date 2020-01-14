@@ -1,9 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.SettingActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent"
+        app:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/menu"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_view"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_view"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calculator"
+            android:textSize="@dimen/button_text_action"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ln_calculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+                android:drawablePadding="@dimen/margin_view"
+                android:drawableTint="@android:color/black"
+                android:text="@string/calculator_version"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/button_text_action" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_function"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_functions_24"
+                android:drawablePadding="@dimen/margin_view"
+                android:drawableTint="@android:color/black"
+                android:text="@string/functions"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/button_text_action" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_history_24"
+                android:drawablePadding="@dimen/margin_view"
+                android:drawableTint="@android:color/black"
+                android:text="@string/history"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/button_text_action" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view"
+            android:text="@string/settings"
+            android:textSize="@dimen/button_text_action"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ln_sound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_baseline_volume_down_24"
+                    android:drawablePadding="@dimen/margin_view"
+                    android:drawableTint="@android:color/black"
+                    android:text="@string/sound"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/button_text_action" />
+
+                <CheckBox
+                    android:id="@+id/ck_sound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_vibrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_baseline_vibration_24"
+                    android:drawablePadding="@dimen/margin_view"
+                    android:drawableTint="@android:color/black"
+                    android:text="@string/vibrate"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/button_text_action" />
+
+                <CheckBox
+                    android:id="@+id/ck_vibrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view"
+            android:text="@string/about_app"
+            android:textSize="@dimen/button_text_action"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ln_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_star_24"
+                android:drawablePadding="@dimen/margin_view"
+                android:drawableTint="@android:color/black"
+                android:text="@string/version"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/button_text_action" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_view"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_baseline_people_24"
+                android:drawablePadding="@dimen/margin_view"
+                android:drawableTint="@android:color/black"
+                android:text="@string/about_us"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/button_text_action" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -10,4 +10,7 @@
     <dimen name="formula_header_size">12sp</dimen>
     <dimen name="formula_sign">32sp</dimen>
     <dimen name="display_text_size">40sp</dimen>
+
+    <dimen name="padding_view">8dp</dimen>
+    <dimen name="margin_view">16dp</dimen>
 </resources>

@@ -3,11 +3,11 @@ package com.phone.extension.calculatorms120.helpers
 import android.content.Context
 import com.phone.extension.calculatorms120.R
 import com.phone.extension.calculatorms120.operation.OperationFactory
-
+import kotlin.text.StringBuilder
 
 class CalculatorImpl(calculator: Calculator, private val context: Context) {
-    var displayedNumber: String? = null
-    var displayedFormula: String? = null
+    private var displayedNumber: String? = null
+    private var displayedFormula: String? = null
     var lastKey: String? = null
     private var mLastOperation: String? = null
     private var mCallback: Calculator? = calculator
@@ -31,6 +31,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
     private var mResultTax = 0.0
 
     init {
+
         resetValues()
         setValue("0")
         setFormula("")
@@ -46,7 +47,6 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
     private fun resetValues() {
         mBaseValue = 0.0
         mSecondValue = 0.0
-        mMemoryValue = 0.0
         mCostValue = 0.0
         mSellValue = 0.0
         mMarValue = 0.0
@@ -91,9 +91,11 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
         }
     }
 
-    fun addDigit(number: Int) {
+    private fun addDigit(number: Int) {
         val currentValue = displayedNumber
         val newValue = formatString(currentValue!! + number)
+        mCallback!!.setVisibilityGT(false)
+
         setValue(newValue)
     }
 
@@ -115,7 +117,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
 
     private fun getDisplayedNumberAsDouble() = Formatter.stringToDouble(displayedNumber!!)
 
-    fun handleResult() {
+    private fun handleResult() {
         mSecondValue = getDisplayedNumberAsDouble()
         calculateResult()
         mBaseValue = getDisplayedNumberAsDouble()
@@ -139,11 +141,22 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
 
         val operation = OperationFactory.forId(mLastOperation!!, mBaseValue, mSecondValue)
         if (operation != null) {
+            val first = Formatter.doubleToString(mBaseValue)
+            val oper = getSign(mLastOperation)
+            val second = Formatter.doubleToString(mSecondValue)
+            val result = Formatter.doubleToString(operation.getResult())
             updateResult(operation.getResult())
+            val valueResult =
+                StringBuilder().append("$first ").append("$oper ").append(second).append(" = ").append(result).toString()
+            mCallback!!.setCalculatorString(valueResult)
+            mCallback!!.setVisibilityGT(true)
+
         }
+
 
         mIsFirstOperation = false
         mResetValue = true
+
     }
 
     fun handleOperation(operation: String) {
@@ -288,11 +301,29 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
         if (mMemoryState) {
             mCallback!!.setVisibilityMemory(true, value)
             if (value == "M-") {
-                mMemoryValue -= mBaseValue
+                subToMemory()
             } else {
-                mMemoryValue += mBaseValue
+                plusToMemory()
             }
         }
+    }
+
+    private fun plusToMemory() {
+        mMemoryValue += if (mBaseValue != 0.0) {
+            mBaseValue
+        } else {
+            displayedNumber?.toDoubleOrNull()!!
+        }
+        mResetValue = true
+    }
+
+    private fun subToMemory() {
+        mMemoryValue -= if (mBaseValue != 0.0) {
+            mBaseValue
+        } else {
+            displayedNumber?.toDoubleOrNull()!!
+        }
+        mResetValue = true
     }
 
     fun memoryResult() {
@@ -317,7 +348,6 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
         mCallback!!.setVisibilityMargin(true, "SELL")
 
         calculatorMargin()
-
     }
 
     fun taxAdd() {

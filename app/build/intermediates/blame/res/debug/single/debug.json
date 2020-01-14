@@ -12,6 +12,10 @@
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\bg_button_unfocused_action.xml"
     },
     {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_history_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_history_24.xml"
+    },
+    {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_setting.xml.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\layout\\activity_setting.xml"
     },
@@ -40,12 +44,12 @@
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\bg_button_unfocused_number.xml"
     },
     {
-        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\layout_calculator_layout.xml.flat",
-        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\layout\\calculator_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_vibration_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_vibration_24.xml"
     },
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -54,10 +58,6 @@
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\layout_calculator.xml.flat",
-        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\layout\\calculator.xml"
     },
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_ac.xml.flat",
@@ -84,6 +84,10 @@
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_star_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_star_24.xml"
+    },
+    {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_button_focus_number.xml.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\bg_button_focus_number.xml"
     },
@@ -92,8 +96,16 @@
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\button_action.xml"
     },
     {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\font_digital.ttf.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\font\\digital.ttf"
+    },
+    {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_number.xml.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\button_number.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_arrow_back_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_arrow_back_24.xml"
     },
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -104,8 +116,24 @@
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_volume_down_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_volume_down_24.xml"
+    },
+    {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_button_unfocused_ac.xml.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\bg_button_unfocused_ac.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_functions_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_functions_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_delete_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_delete_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_phone_android_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_phone_android_24.xml"
     },
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_button_focus_more.xml.flat",
@@ -114,6 +142,14 @@
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_people_24.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_people_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_history_action_list_dialog_item.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\layout\\fragment_history_action_list_dialog_item.xml"
     },
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -126,5 +162,9 @@
     {
         "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_backspace_24.xml.flat",
         "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\drawable\\ic_baseline_backspace_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_history_action_list_dialog.xml.flat",
+        "source": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\src\\main\\res\\layout\\fragment_history_action_list_dialog.xml"
     }
 ]

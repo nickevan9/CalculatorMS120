@@ -19,5 +19,7 @@ interface Calculator {
 
     fun setVisibilitySET(visibility: Boolean)
 
+    fun setCalculatorString(value: String)
+
 
 }

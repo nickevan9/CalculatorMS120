@@ -1390,6 +1390,7 @@ dimen item_touch_helper_swipe_escape_velocity
 dimen line_color_picker_app_icon_size
 dimen line_color_picker_height
 dimen line_color_picker_margin
+dimen margin_view
 dimen medium_margin
 dimen middle_text_size
 dimen min_widget_height
@@ -1461,6 +1462,7 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen one_dp
+dimen padding_view
 dimen pattern_lock_dot_selected_size
 dimen pattern_lock_dot_size
 dimen pattern_lock_path_width
@@ -1629,9 +1631,18 @@ drawable googleg_standard_color_18
 drawable ic_arrow_left_vector
 drawable ic_arrow_right_vector
 drawable ic_attach_file_vector
+drawable ic_baseline_arrow_back_24
 drawable ic_baseline_backspace_24
 drawable ic_baseline_dehaze_24
+drawable ic_baseline_delete_24
 drawable ic_baseline_description_24px
+drawable ic_baseline_functions_24
+drawable ic_baseline_history_24
+drawable ic_baseline_people_24
+drawable ic_baseline_phone_android_24
+drawable ic_baseline_star_24
+drawable ic_baseline_vibration_24
+drawable ic_baseline_volume_down_24
 drawable ic_bell_vector
 drawable ic_camera_vector
 drawable ic_check_vector
@@ -1716,6 +1727,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transparent_button
 drawable transparent_button_pressed
+font digital
 id ALT
 id CTRL
 id FUNCTION
@@ -1770,6 +1782,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id action
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1796,6 +1809,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appBarLayout
 id apply_to_all
 id apply_to_all_holder
 id async
@@ -1825,6 +1839,7 @@ id btn_decimal
 id btn_divide
 id btn_equals
 id btn_gt
+id btn_history
 id btn_m_add
 id btn_m_sub
 id btn_mar
@@ -1839,6 +1854,7 @@ id btn_sell
 id btn_tax_add
 id btn_tax_sub
 id buttonPanel
+id button_clear_history
 id cab_delete
 id cab_remove
 id center
@@ -1855,6 +1871,8 @@ id change_date_time_dialog_radio_two
 id checkbox
 id checked
 id chronometer
+id ck_sound
+id ck_vibrate
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1984,7 +2002,6 @@ id fixed
 id folder_name
 id folder_path
 id forever
-id formula
 id fragment_container_view_tag
 id ghost_view
 id glide_custom_view_target_tag
@@ -2022,6 +2039,7 @@ id invisible
 id italic
 id item_select_alarm_sound
 id item_touch_helper_previous_elevation
+id label_history
 id labeled
 id largeLabel
 id left
@@ -2042,6 +2060,13 @@ id list_item_details
 id list_item_holder
 id list_item_icon
 id list_item_name
+id ln_about
+id ln_calculator
+id ln_function
+id ln_history
+id ln_sound
+id ln_version
+id ln_vibrate
 id lottie_layer_name
 id masked
 id message
@@ -2122,6 +2147,8 @@ id reverse
 id right
 id right_icon
 id right_side
+id row
+id rv_history
 id save
 id save_image_matrix
 id save_non_transition_alpha
@@ -2183,6 +2210,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
 id text_input_password_toggle
 id text_view
 id textinput_counter
@@ -2192,6 +2220,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -2204,6 +2233,7 @@ id tv_formular
 id tv_gt
 id tv_margin
 id tv_memory
+id tv_result
 id tv_set
 id tv_tax
 id unchecked
@@ -2298,8 +2328,6 @@ layout activity_license
 layout activity_main
 layout activity_setting
 layout breadcrumb_item
-layout calculator
-layout calculator_layout
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2344,6 +2372,8 @@ layout empty_image_view
 layout fastscroller_handle_horizontal
 layout fastscroller_handle_vertical
 layout filepicker_list_item
+layout fragment_history_action_list_dialog
+layout fragment_history_action_list_dialog_item
 layout item_select_alarm_sound
 layout license_faq_item
 layout mtrl_layout_snackbar
@@ -2432,6 +2462,8 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string about
+string about_app
+string about_us
 string add_favorites
 string add_fingerprint
 string add_new_sound
@@ -2472,6 +2504,8 @@ string before_asking_question_read_faq
 string black_white
 string bottom_navigation_bar_color
 string bottom_sheet_behavior
+string calculator
+string calculator_version
 string camera
 string cancel
 string change_color
@@ -2480,6 +2514,7 @@ string change_filter
 string changing_color_description
 string character_counter_content_description
 string character_counter_pattern
+string clear_history
 string click_select_destination
 string com_crashlytics_android_build_id
 string common_google_play_services_enable_button
@@ -2638,6 +2673,7 @@ string frequently_asked_questions
 string friday
 string friday_letter
 string friday_short
+string functions
 string gcm_defaultSenderId
 string gesture_views_text
 string gesture_views_title
@@ -2661,6 +2697,9 @@ string hide
 string hide_bottom_view_on_scroll_behavior
 string hide_folder
 string hide_the_recycle_bin
+string history
+string history_cleared
+string history_result
 string hours_raw
 string import_settings
 string importing
@@ -2716,6 +2755,7 @@ string maximum_share_reached
 string may
 string maybe
 string medium
+string menu
 string merge
 string message_pattern_cleared
 string message_pattern_detected
@@ -2754,6 +2794,7 @@ string no_entries_for_exporting
 string no_entries_for_importing
 string no_files_selected
 string no_fingerprints_registered
+string no_history
 string no_items_found
 string no_new_items
 string no_reminder
@@ -2913,6 +2954,7 @@ string song_title
 string sort_by
 string sort_numeric_parts
 string sort_randomly
+string sound
 string source
 string source_and_destination_same
 string source_file_doesnt_exist
@@ -2973,6 +3015,8 @@ string use_english_language
 string use_for_this_folder
 string use_same_snooze
 string value_copied_to_clipboard
+string version
+string vibrate
 string vibrate_on_button_press
 string visibility
 string website_label

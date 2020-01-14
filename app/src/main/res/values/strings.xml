@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">CalculatorMS120</string>
+    <string name="menu">Menu</string>
+    <string name="calculator">Calculator</string>
+    <string name="functions">Functions</string>
+    <string name="history">History</string>
+    <string name="calculator_version">Casio MS-120BM</string>
+    <string name="sound">Sound</string>
+    <string name="settings">Setting</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="about_app">About app</string>
+    <string name="version">Version : 1.0</string>
+    <string name="about_us">About us</string>
+
+    <string name="clear_history">Clear history</string>
+    <string name="history_result">"History result: "</string>
+    <string name="no_history">"There's no history yet."</string>
+    <string name="history_cleared">History cleared</string>
 </resources>

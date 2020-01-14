@@ -22,10 +22,10 @@
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/list_item_spacing_half"
-    android:paddingLeft="@dimen/list_item_spacing"
-    android:paddingRight="@dimen/list_item_spacing"
-    android:paddingTop="@dimen/list_item_spacing_half">
+    android:paddingBottom="@dimen/padding_view"
+    android:paddingLeft="@dimen/margin_view"
+    android:paddingRight="@dimen/margin_view"
+    android:paddingTop="@dimen/padding_view">
 
     <TextView
         android:id="@+id/action"

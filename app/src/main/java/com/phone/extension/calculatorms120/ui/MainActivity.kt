@@ -1,23 +1,29 @@
 package com.phone.extension.calculatorms120.ui
 
+
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.phone.extension.calculatorms120.R
 import com.phone.extension.calculatorms120.extensions.config
 import com.phone.extension.calculatorms120.helpers.*
+import com.phone.extension.calculatorms120.helpers.Formatter
 import com.simplemobiletools.commons.extensions.copyToClipboard
 import com.simplemobiletools.commons.extensions.performHapticFeedback
 import com.simplemobiletools.commons.extensions.value
 import kotlinx.android.synthetic.main.activity_main.*
 import me.grantland.widget.AutofitHelper
 
+
 class MainActivity : AppCompatActivity(), Calculator {
 
     private var vibrateOnButtonPress = true
+
+    private var historyActionList: ArrayList<String> = arrayListOf()
 
     lateinit var calc: CalculatorImpl
 
@@ -62,14 +68,19 @@ class MainActivity : AppCompatActivity(), Calculator {
 
         btn_equals.setOnClickListener { calc.handleEquals(); checkHaptic(it) }
         tv_set.setOnLongClickListener { copyToClipboard(false) }
-        result.setOnLongClickListener { copyToClipboard(true) }
+        tv_result.setOnLongClickListener { copyToClipboard(true) }
 
         btn_menu.setOnClickListener {
             val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
 
-        AutofitHelper.create(result)
+        btn_history.setOnClickListener {
+            HistoryActionListDialogFragment.newInstance(historyActionList).show(
+                supportFragmentManager, "dialog"
+            )
+        }
+        AutofitHelper.create(tv_result)
         AutofitHelper.create(tv_set)
     }
 
@@ -104,7 +115,7 @@ class MainActivity : AppCompatActivity(), Calculator {
     private fun copyToClipboard(copyResult: Boolean): Boolean {
         var value = tv_set.value
         if (copyResult) {
-            value = result.value
+            value = tv_result.value
         }
 
         return if (value.isEmpty()) {
@@ -116,7 +127,7 @@ class MainActivity : AppCompatActivity(), Calculator {
     }
 
     override fun setValue(value: String, context: Context) {
-        result.text = value
+        tv_result.text = value
     }
 
 
@@ -174,5 +185,10 @@ class MainActivity : AppCompatActivity(), Calculator {
         } else {
             tv_set.visibility = View.INVISIBLE
         }
+    }
+
+    override fun setCalculatorString(value: String) {
+        historyActionList.add(value)
+        Log.d("Pheptoan",value)
     }
 }
