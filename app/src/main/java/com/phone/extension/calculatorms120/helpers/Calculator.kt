@@ -11,9 +11,13 @@ interface Calculator {
 
     fun setVisibilityGT(visibility: Boolean)
 
-    fun setVisibilityMemory(visibility: Boolean)
+    fun setVisibilityMemory(visibility: Boolean, value: String)
 
-    fun setVisibilityTAX(visibility: Boolean)
+    fun setVisibilityTAX(visibility: Boolean, value: String)
 
-    fun setVisibilityMargin(visibility: Boolean)
+    fun setVisibilityMargin(visibility: Boolean, value: String)
+
+    fun setVisibilitySET(visibility: Boolean)
+
+
 }

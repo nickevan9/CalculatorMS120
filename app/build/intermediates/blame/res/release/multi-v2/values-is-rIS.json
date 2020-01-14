@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-is-rIS\\values-is-rIS.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\nicke\\.gradle\\caches\\transforms-2\\files-2.1\\bfd68b9890485b04c377e3c49a547858\\jetified-core-3.3.0\\res\\values-is-rIS\\values-is-rIS.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,212,358,486,618,747,859,990,1115,1287,1420,1528,1627",
+                        "endColumns": "156,145,127,131,128,111,130,124,171,132,107,98,81",
+                        "endOffsets": "207,353,481,613,742,854,985,1110,1282,1415,1523,1622,1704"
+                    }
+                }
+            ]
+        }
+    ]
+}

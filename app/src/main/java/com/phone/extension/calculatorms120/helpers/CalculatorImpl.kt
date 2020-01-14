@@ -5,7 +5,7 @@ import com.phone.extension.calculatorms120.R
 import com.phone.extension.calculatorms120.operation.OperationFactory
 
 
-class CalculatorImpl(calculator: Calculator, val context: Context) {
+class CalculatorImpl(calculator: Calculator, private val context: Context) {
     var displayedNumber: String? = null
     var displayedFormula: String? = null
     var lastKey: String? = null
@@ -18,7 +18,17 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
     private var mBaseValue = 0.0
     private var mSecondValue = 0.0
 
-    private var memory = 0.0
+    private var mMemoryValue = 0.0
+    private var mMemoryState = false
+
+    private var mCostValue = 0.0
+    private var mSellValue = 0.0
+    private var mMarValue = 0.0
+
+    private var mSetState = false
+    private var mSetValue = 0.0
+
+    private var mResultTax = 0.0
 
     init {
         resetValues()
@@ -36,12 +46,17 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
     private fun resetValues() {
         mBaseValue = 0.0
         mSecondValue = 0.0
+        mMemoryValue = 0.0
+        mCostValue = 0.0
+        mSellValue = 0.0
+        mMarValue = 0.0
         mResetValue = false
         mLastOperation = ""
         displayedNumber = ""
         displayedFormula = ""
         mIsFirstOperation = true
         lastKey = ""
+        mSetState = false
     }
 
     fun setValue(value: String) {
@@ -59,16 +74,20 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
         val second = Formatter.doubleToString(mSecondValue)
         val sign = getSign(mLastOperation)
 
-        if (sign == "√") {
-            setFormula(sign + first)
-        } else if (sign == "!") {
-            setFormula(first + sign)
-        } else if (!sign.isEmpty()) {
-            var formula = first + sign + second
-            if (mWasPercentLast) {
-                formula += "%"
+        when {
+            sign == "√" -> {
+                setFormula(sign + first)
             }
-            setFormula(formula)
+            sign == "!" -> {
+                setFormula(first + sign)
+            }
+            sign.isNotEmpty() -> {
+                var formula = first + sign + second
+                if (mWasPercentLast) {
+                    formula += "%"
+                }
+                setFormula(formula)
+            }
         }
     }
 
@@ -124,6 +143,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
         }
 
         mIsFirstOperation = false
+        mResetValue = true
     }
 
     fun handleOperation(operation: String) {
@@ -136,6 +156,8 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
         lastKey = operation
         mLastOperation = operation
 
+        setFormula(getSign(operation))
+
         if (operation == ROOT) {
             handleRoot()
             mResetValue = false
@@ -144,7 +166,14 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
             handleFactorial()
             mResetValue = false
         }
+
+        if (mSetState) {
+            if (operation == PERCENT) {
+                mSetValue = displayedNumber?.toDoubleOrNull()!!
+            }
+        }
     }
+
 
     fun handleClear() {
         if (displayedNumber.equals(NAN)) {
@@ -172,6 +201,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
         resetValues()
         setValue("0")
         setFormula("")
+        hiddenAllState()
     }
 
     fun handleEquals() {
@@ -205,8 +235,8 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
     private fun getSign(lastOperation: String?) = when (lastOperation) {
         PLUS -> "+"
         MINUS -> "-"
-        MULTIPLY -> "*"
-        DIVIDE -> "/"
+        MULTIPLY -> "×"
+        DIVIDE -> "÷"
         PERCENT -> "%"
         POWER -> "^"
         ROOT -> "√"
@@ -237,17 +267,88 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
         }
     }
 
+    fun addZero() {
+        if (lastKey == EQUALS) {
+            mLastOperation = EQUALS
+        }
+
+        lastKey = DIGIT
+        resetValueIfNeeded()
+        addDigit(0)
+        addDigit(0)
+    }
+
     fun resetMemory() {
-        mCallback!!.setVisibilityMemory(true)
-        memory = 0.0
+        mCallback!!.setVisibilityMemory(true, "M")
+        mMemoryState = true
+        mMemoryValue = 0.0
     }
 
-    fun setMemory() {
-        mCallback!!.setVisibilityMemory(true)
-        memory = mBaseValue
+    fun setMemory(value: String) {
+        if (mMemoryState) {
+            mCallback!!.setVisibilityMemory(true, value)
+            if (value == "M-") {
+                mMemoryValue -= mBaseValue
+            } else {
+                mMemoryValue += mBaseValue
+            }
+        }
     }
 
-    fun setTax() {
+    fun memoryResult() {
+        mBaseValue = mMemoryValue
+        updateResult(mBaseValue)
+    }
+
+
+    fun setSet() {
+        mCallback!!.setVisibilitySET(true)
+        mSetState = true
+    }
+
+    fun setCost() {
+        mCostValue = displayedNumber?.toDoubleOrNull()!!
+        mCallback!!.setVisibilityMargin(true, "COST")
+        mResetValue = true
+    }
+
+    fun setSell() {
+        mSellValue = displayedNumber?.toDoubleOrNull()!!
+        mCallback!!.setVisibilityMargin(true, "SELL")
+
+        calculatorMargin()
+
+    }
+
+    fun taxAdd() {
+        if (mSetValue != 0.0) {
+            mCallback!!.setVisibilityTAX(true, "TAX+")
+            mResultTax = displayedNumber?.toDoubleOrNull()!! * (100 + mSetValue) / 100
+            updateResult(mResultTax)
+        }
+    }
+
+    fun taxSub() {
+        if (mSetValue != 0.0) {
+            mCallback!!.setVisibilityTAX(true, "TAX−")
+            mResultTax = displayedNumber?.toDoubleOrNull()!! * (100 - mSetValue) / 100
+            updateResult(mResultTax)
+        }
+    }
+
+    private fun calculatorMargin() {
+        mMarValue = mSellValue - mCostValue
+        mCallback!!.setVisibilityMargin(true, "MAR")
+        updateResult(mMarValue)
+    }
+
+    private fun hiddenAllState() {
+        mCallback!!.setVisibilityMargin(false, "")
+        mCallback!!.setVisibilityGT(false)
+        mCallback!!.setVisibilityMemory(false, "")
+        mCallback!!.setVisibilityTAX(false, "")
+        mCallback!!.setVisibilitySET(false)
+
 
     }
 }

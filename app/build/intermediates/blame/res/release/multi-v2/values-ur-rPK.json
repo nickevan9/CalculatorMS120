@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\nicke\\Desktop\\github\\CalculatorMS120\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ur-rPK\\values-ur-rPK.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\nicke\\.gradle\\caches\\transforms-2\\files-2.1\\bfd68b9890485b04c377e3c49a547858\\jetified-core-3.3.0\\res\\values-ur-rPK\\values-ur-rPK.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,212,369,512,662,805,925,1054,1191,1351,1483,1595,1698",
+                        "endColumns": "156,156,142,149,142,119,128,136,159,131,111,102,82",
+                        "endOffsets": "207,364,507,657,800,920,1049,1186,1346,1478,1590,1693,1776"
+                    }
+                }
+            ]
+        }
+    ]
+}

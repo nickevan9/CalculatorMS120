@@ -1123,6 +1123,8 @@
     <dimen name="fastscroll_minimum_range">50dp</dimen>
     <dimen name="fastscroll_width">8dp</dimen>
     <dimen name="fingerprint_icon_size">72dp</dimen>
+    <dimen name="formula_header_size">12sp</dimen>
+    <dimen name="formula_sign">32sp</dimen>
     <dimen name="formula_text_size">24sp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
@@ -1545,7 +1547,7 @@
     <string name="character_counter_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="click_select_destination">Click here to select destination</string>
-    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">dce1c58c-9025-40fb-b881-1054e6a8e8e7</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">b6e35bed-788f-4f52-917f-d24ffff77bc1</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
